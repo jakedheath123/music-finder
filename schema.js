@@ -3,6 +3,7 @@ const axios = require("axios");
 const {
   GraphQLObjectType,
   GraphQLSchema,
+  GraphQLList,
   GraphQLInt,
   GraphQLString
 } = require("graphql");
@@ -13,6 +14,16 @@ const ArtistType = new GraphQLObjectType({
     id: { type: GraphQLInt },
     name: { type: GraphQLString },
     picture_big: { type: GraphQLString }
+  })
+});
+
+const AlbumsType = new GraphQLObjectType({
+  name: "Albums",
+  fields: () => ({
+    title: { type: GraphQLString },
+    cover_medium: { type: GraphQLString },
+    fans: { type: GraphQLInt },
+    release_date: { type: GraphQLString }
   })
 });
 
@@ -28,6 +39,17 @@ const RootQuery = new GraphQLObjectType({
         return axios
           .get(`https://api.deezer.com/artist/${args.name}`)
           .then(response => response.data);
+      }
+    },
+    albums: {
+      type: new GraphQLList(AlbumsType),
+      args: {
+        id: { type: GraphQLInt }
+      },
+      resolve(parent, args) {
+        return axios
+          .get(`https://api.deezer.com/artist/${args.id}/albums`)
+          .then(response => response.data.data);
       }
     }
   }
