@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/jakedheath123/music-finder/issues"
   },
-  "homepage": "https://github.com/jakedheath123/music-finder#readme"
+  "homepage": "https://github.com/jakedheath123/music-finder#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.2.0"
+  }
 }
