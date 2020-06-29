@@ -1,0 +1,19 @@
+{
+  "name": "music-finder",
+  "version": "1.0.0",
+  "description": "Music search application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakedheath123/music-finder.git"
+  },
+  "author": "Jake Heath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakedheath123/music-finder/issues"
+  },
+  "homepage": "https://github.com/jakedheath123/music-finder#readme"
+}
