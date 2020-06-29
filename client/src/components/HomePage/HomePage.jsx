@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
 const HomePage = () => {
-  const artist = "coldplay";
+  const [artistSearch, setArtistSearch] = useState("");
 
   const ARTIST_QUERY = gql`
     query {
-      artist(name: "${artist}") {
+      artist(name: "") {
         name
         id
         picture_big
@@ -17,9 +17,16 @@ const HomePage = () => {
 
   const { loading, error, data } = useQuery(ARTIST_QUERY);
 
-  console.log(data);
-
-  return <div></div>;
+  return (
+    <div>
+      <form>
+        <label>
+          Search Artist:
+          <input type="text" />
+        </label>
+      </form>
+    </div>
+  );
 };
 
 export default HomePage;
