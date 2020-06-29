@@ -23,12 +23,13 @@ const HomePage = () => {
   const { loading, error, data } = useQuery(ARTIST_QUERY);
 
   if (!data) return null;
-
+  if (loading) return <p>Loading</p>;
   const { name, picture_big } = data.artist;
 
   return (
     <div>
       <SearchForm searchByArtist={searchByArtist} />
+
       {picture_big ? <img src={picture_big} alt="Artist cover" /> : null}
       <h1>{name}</h1>
     </div>
