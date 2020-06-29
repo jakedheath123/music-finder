@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage/HomePage";
 function App() {
   return (
     <>
-      <Router>
+      <Router primary={false}>
         <HomePage path="/" />
       </Router>
     </>
