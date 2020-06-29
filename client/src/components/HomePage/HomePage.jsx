@@ -26,6 +26,7 @@ const HomePage = () => {
 
   if (!data) return null;
   if (loading) return <p>Loading</p>;
+
   const { name, picture_big } = data.artist;
 
   return (
