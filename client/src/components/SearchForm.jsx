@@ -19,7 +19,7 @@ const SearchForm = ({ searchByArtist }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          Search Artist:
+          Artist Name:
           <input
             type="text"
             name="userInput"
