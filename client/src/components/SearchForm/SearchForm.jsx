@@ -24,7 +24,7 @@ const SearchForm = ({ searchByArtist }) => {
             name="userInput"
             value={userInput}
             onChange={handleChange}
-            style={{ border: "none" }}
+            style={{ border: "none", textAlign: "center" }}
             placeholder="Search"
           />
 
