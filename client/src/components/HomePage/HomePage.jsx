@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import SearchForm from "./SearchForm";
+
+import "./HomePage.css";
+import SearchForm from "../SearchForm/SearchForm";
 
 const HomePage = () => {
   const [artistSearch, setArtistSearch] = useState(null);
@@ -29,7 +31,6 @@ const HomePage = () => {
   return (
     <div>
       <SearchForm searchByArtist={searchByArtist} />
-
       {picture_big ? <img src={picture_big} alt="Artist cover" /> : null}
       <h1>{name}</h1>
     </div>
