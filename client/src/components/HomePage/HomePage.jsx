@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
+import { Link } from "@reach/router";
 
 import "./HomePage.css";
 import SearchForm from "../SearchForm/SearchForm";
@@ -27,7 +28,7 @@ const HomePage = () => {
   if (!data) return null;
   if (loading) return <p>Loading</p>;
 
-  const { name, picture_big } = data.artist;
+  const { name, picture_big, id } = data.artist;
 
   return (
     <main className="home-container">
@@ -35,7 +36,12 @@ const HomePage = () => {
         <SearchForm searchByArtist={searchByArtist} />
       </div>
       <div className="home-content">
-        {picture_big ? <img src={picture_big} alt="Artist cover" /> : null}
+        {picture_big ? (
+          <Link to={`/artist/${id}`}>
+            {" "}
+            <img src={picture_big} alt="Artist cover" />{" "}
+          </Link>
+        ) : null}
         <h1>{name}</h1>
       </div>
     </main>

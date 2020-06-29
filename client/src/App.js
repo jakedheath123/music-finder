@@ -10,7 +10,7 @@ function App() {
     <>
       <Router primary={false}>
         <HomePage path="/" />
-        <ArtistPage path="/artist:artist_id" />
+        <ArtistPage path="/artist/:artist_id" />
       </Router>
     </>
   );
