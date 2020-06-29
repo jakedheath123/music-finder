@@ -1,0 +1,23 @@
+.home-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "home-search home-search"
+    "home-content home-content";
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.home-search {
+  grid-area: home-search;
+}
+
+.home-content {
+  grid-area: home-content;
+}
+
+.home-content img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
