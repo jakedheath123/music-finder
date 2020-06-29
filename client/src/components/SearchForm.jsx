@@ -18,15 +18,13 @@ const SearchForm = ({ searchByArtist }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>
-          Artist Name:
-          <input
-            type="text"
-            name="userInput"
-            value={userInput}
-            onChange={handleChange}
-          />
-        </label>
+        <input
+          type="text"
+          name="userInput"
+          value={userInput}
+          onChange={handleChange}
+        />
+
         <button>Search</button>
       </form>
     </div>
