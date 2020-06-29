@@ -22,7 +22,7 @@ const HomePage = () => {
     setArtistSearch(userInput);
   };
 
-  const { loading, error, data } = useQuery(ARTIST_QUERY);
+  const { loading, data } = useQuery(ARTIST_QUERY);
 
   if (!data) return null;
   if (loading) return <p>Loading</p>;
