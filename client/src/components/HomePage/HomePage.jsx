@@ -29,11 +29,15 @@ const HomePage = () => {
   const { name, picture_big } = data.artist;
 
   return (
-    <div>
-      <SearchForm searchByArtist={searchByArtist} />
-      {picture_big ? <img src={picture_big} alt="Artist cover" /> : null}
-      <h1>{name}</h1>
-    </div>
+    <main className="home-container">
+      <div className="home-search">
+        <SearchForm searchByArtist={searchByArtist} />
+      </div>
+      <div className="home-content">
+        {picture_big ? <img src={picture_big} alt="Artist cover" /> : null}
+        <h1>{name}</h1>
+      </div>
+    </main>
   );
 };
 
