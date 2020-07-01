@@ -6,7 +6,7 @@
     "home-search home-search"
     "home-content home-content";
   justify-content: center;
-  /* margin-top: 5%; */
+  margin: 5% 10% 0% 10%;
   text-align: center;
 }
 
