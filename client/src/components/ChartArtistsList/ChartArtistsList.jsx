@@ -12,6 +12,7 @@ const ChartArtistsList = () => {
         id
         name
         picture_big
+        position
       }
     }
   `;
@@ -26,9 +27,10 @@ const ChartArtistsList = () => {
     <section>
       <ul className="chart-list">
         {chartArtists.map(artist => {
-          const { id, name, picture_big } = artist;
+          const { id, name, picture_big, position } = artist;
           return (
             <li key={id}>
+              <h2>{position}</h2>
               <Link to={`/artist/${id}`}>
                 <img src={picture_big} alt="Artist cover" />
               </Link>
