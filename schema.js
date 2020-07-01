@@ -17,8 +17,8 @@ const ArtistType = new GraphQLObjectType({
   })
 });
 
-const AlbumsType = new GraphQLObjectType({
-  name: "Albums",
+const ArtistAlbumsType = new GraphQLObjectType({
+  name: "ArtistAlbums",
   fields: () => ({
     title: { type: GraphQLString },
     cover_medium: { type: GraphQLString },
@@ -37,8 +37,8 @@ const ChartArtistsType = new GraphQLObjectType({
   })
 });
 
-const TopTracksType = new GraphQLObjectType({
-  name: "TopTracks",
+const TopArtistTracksType = new GraphQLObjectType({
+  name: "TopArtistTracks",
   fields: () => ({
     title_short: { type: GraphQLString },
     preview: { type: GraphQLString },
@@ -69,8 +69,8 @@ const RootQuery = new GraphQLObjectType({
           .then(response => response.data);
       }
     },
-    albums: {
-      type: new GraphQLList(AlbumsType),
+    artistAlbums: {
+      type: new GraphQLList(ArtistAlbumsType),
       args: {
         id: { type: GraphQLString }
       },
@@ -88,8 +88,8 @@ const RootQuery = new GraphQLObjectType({
           .then(response => response.data.data);
       }
     },
-    topTracks: {
-      type: new GraphQLList(TopTracksType),
+    topArtistTracks: {
+      type: new GraphQLList(TopArtistTracksType),
       args: {
         id: { type: GraphQLString }
       },
