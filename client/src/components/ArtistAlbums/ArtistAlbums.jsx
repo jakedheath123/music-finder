@@ -2,7 +2,7 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
-const Albums = ({ artist_id }) => {
+const ArtistAlbums = ({ artist_id }) => {
   const ALBUMS_QUERY = gql`
   query {
     artistAlbums(id: "${artist_id}") {
@@ -15,7 +15,6 @@ const Albums = ({ artist_id }) => {
   `;
 
   const { loading, data } = useQuery(ALBUMS_QUERY);
-  console.log(data);
 
   if (loading) return <p>Loading..</p>;
 
@@ -38,4 +37,4 @@ const Albums = ({ artist_id }) => {
   );
 };
 
-export default Albums;
+export default ArtistAlbums;

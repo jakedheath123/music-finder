@@ -1,6 +1,8 @@
 import React from "react";
+import { gql } from "apollo-boost";
+import { useQuery } from "@apollo/react-hooks";
 
-const TopTracks = () => {
+const ArtistTopTracks = () => {
   return (
     <div>
       {/* <audio controls>
@@ -13,4 +15,4 @@ const TopTracks = () => {
   );
 };
 
-export default TopTracks;
+export default ArtistTopTracks;
