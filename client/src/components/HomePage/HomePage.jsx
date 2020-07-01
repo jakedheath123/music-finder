@@ -42,8 +42,7 @@ const HomePage = () => {
       <section className="home-content">
         {picture_big ? (
           <Link to={`/artist/${id}`}>
-            {" "}
-            <img src={picture_big} alt="Artist cover" />{" "}
+            <img src={picture_big} alt="Artist cover" />
           </Link>
         ) : null}
         <h1>{name}</h1>

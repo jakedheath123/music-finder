@@ -1,6 +1,7 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import { Link } from "@reach/router";
 
 import "./SingleArtistPage.css";
 import ArtistAlbums from "../ArtistAlbums/ArtistAlbums";
@@ -25,6 +26,9 @@ const ArtistPage = ({ artist_id }) => {
   return (
     <main className="single-artist-container">
       <section className="single-artist-head">
+        <Link to="/">
+          <button>Back</button>
+        </Link>
         <h1>{name}</h1>
         <img src={picture_big} alt="Artist cover" />
       </section>
