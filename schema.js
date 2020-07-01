@@ -28,7 +28,7 @@ const AlbumsType = new GraphQLObjectType({
 });
 
 const ChartArtistsType = new GraphQLObjectType({
-  name: "Chart Artists",
+  name: "ChartArtists",
   fields: () => ({
     id: { type: GraphQLInt },
     name: { type: GraphQLString },
