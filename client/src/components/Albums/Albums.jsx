@@ -1,7 +1,40 @@
 import React from "react";
+import { gql } from "apollo-boost";
+import { useQuery } from "@apollo/react-hooks";
 
-const Albums = () => {
-  return <div></div>;
+const Albums = ({ artist_id }) => {
+  const ALBUMS_QUERY = gql`
+  query {
+    albums(id: "${artist_id}") {
+      title,
+      cover_medium,
+      fans,
+      release_date
+    }
+  }
+  `;
+
+  const { loading, data } = useQuery(ALBUMS_QUERY);
+
+  if (loading) return <p>Loading..</p>;
+
+  const { albums } = data;
+
+  return (
+    <ul>
+      {albums.map((album, index) => {
+        const { title, cover_medium, fans, release_date } = album;
+        return (
+          <li key={index}>
+            <h2>{title}</h2>
+            <img src={cover_medium} alt="Album cover" />
+            <p>{fans}</p>
+            <p>{release_date}</p>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default Albums;
