@@ -23,17 +23,13 @@ const ArtistPage = ({ artist_id }) => {
   const { name, picture_big } = data.artist;
 
   return (
-    <main>
-      <section>
+    <main className="single-artist-container">
+      <section className="single-artist-head">
         <h1>{name}</h1>
         <img src={picture_big} alt="Artist cover" />
       </section>
-      <aside>
-        <ArtistTopTracks artist_id={artist_id} />
-      </aside>
-      <section>
-        <ArtistAlbums artist_id={artist_id} />
-      </section>
+      <ArtistTopTracks artist_id={artist_id} className="single-artist-tracks" />
+      <ArtistAlbums artist_id={artist_id} className="single-artist-albums" />
     </main>
   );
 };

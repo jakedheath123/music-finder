@@ -1,0 +1,26 @@
+.single-artist-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "single-artist-head single-artist-head single-artist-tracks"
+    "single-artist-albums single-artist-albums single-artist-albums";
+  justify-content: center;
+
+  text-align: center;
+}
+
+.single-artist-head {
+  grid-area: single-artist-head;
+}
+
+.single-artist-head img {
+  border-radius: 50%;
+}
+
+.single-artist-tracks {
+  grid-area: single-artist-tracks;
+}
+
+.single-artist-albums {
+  grid-area: single-artist-albums;
+}

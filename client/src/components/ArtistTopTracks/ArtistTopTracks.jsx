@@ -22,23 +22,25 @@ const ArtistTopTracks = ({ artist_id }) => {
   const { topArtistTracks } = data;
 
   return (
-    <ul>
-      {topArtistTracks.map(track => {
-        const { title_short, preview, contributors } = track;
-        return (
-          <li key={title_short}>
-            <h3>{title_short}</h3>
-            <audio controls>
-              <source src={preview} type="audio/ogg" />
-            </audio>
-            {contributors.map((contributor, index) => {
-              const { name } = contributor;
-              return <p key={index}>{name}</p>;
-            })}
-          </li>
-        );
-      })}
-    </ul>
+    <aside>
+      <ul>
+        {topArtistTracks.map(track => {
+          const { title_short, preview, contributors } = track;
+          return (
+            <li key={title_short}>
+              <h3>{title_short}</h3>
+              <audio controls>
+                <source src={preview} type="audio/ogg" />
+              </audio>
+              {contributors.map((contributor, index) => {
+                const { name } = contributor;
+                return <p key={index}>{name}</p>;
+              })}
+            </li>
+          );
+        })}
+      </ul>
+    </aside>
   );
 };
 

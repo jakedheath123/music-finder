@@ -21,19 +21,21 @@ const ArtistAlbums = ({ artist_id }) => {
   const { artistAlbums } = data;
 
   return (
-    <ul>
-      {artistAlbums.map((album, index) => {
-        const { title, cover_medium, fans, release_date } = album;
-        return (
-          <li key={index}>
-            <h2>{title}</h2>
-            <img src={cover_medium} alt="Album cover" />
-            <p>{fans}</p>
-            <p>{release_date}</p>
-          </li>
-        );
-      })}
-    </ul>
+    <section>
+      <ul>
+        {artistAlbums.map((album, index) => {
+          const { title, cover_medium, fans, release_date } = album;
+          return (
+            <li key={index}>
+              <h2>{title}</h2>
+              <img src={cover_medium} alt="Album cover" />
+              <p>{fans}</p>
+              <p>{release_date}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 };
 
