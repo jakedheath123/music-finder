@@ -37,6 +37,24 @@ const ChartArtistsType = new GraphQLObjectType({
   })
 });
 
+const TopTracksType = new GraphQLObjectType({
+  name: "TopTracks",
+  fields: () => ({
+    title_short: { type: GraphQLString },
+    preview: { type: GraphQLString },
+    contributors: { type: TrackContributorsListType }
+  })
+});
+
+const TrackContributorsType = new GraphQLObjectType({
+  name: "TrackContributors",
+  fields: () => ({
+    name: { type: GraphQLString }
+  })
+});
+
+const TrackContributorsListType = new GraphQLList(TrackContributorsType);
+
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -67,6 +85,17 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get("https://api.deezer.com/chart/0/artists")
+          .then(response => response.data.data);
+      }
+    },
+    topTracks: {
+      type: new GraphQLList(TopTracksType),
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve(parent, args) {
+        return axios
+          .get(`https://api.deezer.com/artist/${args.id}/top`)
           .then(response => response.data.data);
       }
     }
