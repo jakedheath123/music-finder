@@ -2,11 +2,16 @@
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:
+    "home-chart-artists home-chart-artists"
     "home-search home-search"
     "home-content home-content";
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
+}
+
+.home-chart-artists {
+  grid-area: home-chart-artists;
 }
 
 .home-search {
@@ -18,7 +23,7 @@
 }
 
 .home-content img {
-  width: 300px;
-  height: 300px;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
 }

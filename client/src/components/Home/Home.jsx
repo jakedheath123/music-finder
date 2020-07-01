@@ -32,23 +32,21 @@ const HomePage = () => {
   const { name, picture_big, id } = data.artist;
 
   return (
-    <>
-      <ChartArtistsList />
-      <main className="home-container">
-        <div className="home-search">
-          <SearchForm searchByArtist={searchByArtist} />
-        </div>
-        <div className="home-content">
-          {picture_big ? (
-            <Link to={`/artist/${id}`}>
-              {" "}
-              <img src={picture_big} alt="Artist cover" />{" "}
-            </Link>
-          ) : null}
-          <h1>{name}</h1>
-        </div>
-      </main>
-    </>
+    <main className="home-container">
+      <ChartArtistsList className="home-chart-artists" />
+      <div className="home-search">
+        <SearchForm searchByArtist={searchByArtist} />
+      </div>
+      <div className="home-content">
+        {picture_big ? (
+          <Link to={`/artist/${id}`}>
+            {" "}
+            <img src={picture_big} alt="Artist cover" />{" "}
+          </Link>
+        ) : null}
+        <h1>{name}</h1>
+      </div>
+    </main>
   );
 };
 

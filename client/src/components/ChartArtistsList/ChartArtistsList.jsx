@@ -1,6 +1,9 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import { Link } from "@reach/router";
+
+import "./ChartArtistsList.css";
 
 const ChartArtistsList = () => {
   const CHART_ARTISTS_QUERY = gql`
@@ -21,12 +24,14 @@ const ChartArtistsList = () => {
 
   return (
     <section>
-      <ul>
+      <ul className="chart-list">
         {chartArtists.map(artist => {
           const { id, name, picture_big } = artist;
           return (
             <li key={id}>
-              <img src={picture_big} alt="Artist cover" />
+              <Link to={`/artist/${id}`}>
+                <img src={picture_big} alt="Artist cover" />
+              </Link>
               <h1>{name}</h1>
             </li>
           );

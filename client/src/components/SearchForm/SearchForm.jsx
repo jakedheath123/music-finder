@@ -26,6 +26,7 @@ const SearchForm = ({ searchByArtist }) => {
             onChange={handleChange}
             style={{ border: "none", textAlign: "center" }}
             placeholder="Search"
+            required
           />
 
           <button style={{ padding: "0", border: "0" }}>
