@@ -28,7 +28,7 @@ const ArtistPage = ({ artist_id }) => {
         <img src={picture_big} alt="Artist cover" />
       </section>
       <aside>
-        <TopTracks />
+        <TopTracks artist_id={artist_id} />
       </aside>
       <section>
         <Albums artist_id={artist_id} />

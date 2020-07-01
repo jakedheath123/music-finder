@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 const Albums = ({ artist_id }) => {
   const ALBUMS_QUERY = gql`
   query {
-    albums(id: "${artist_id}") {
+    artistAlbums(id: "${artist_id}") {
       title,
       cover_medium,
       fans,
@@ -15,14 +15,15 @@ const Albums = ({ artist_id }) => {
   `;
 
   const { loading, data } = useQuery(ALBUMS_QUERY);
+  console.log(data);
 
   if (loading) return <p>Loading..</p>;
 
-  const { albums } = data;
+  const { artistAlbums } = data;
 
   return (
     <ul>
-      {albums.map((album, index) => {
+      {artistAlbums.map((album, index) => {
         const { title, cover_medium, fans, release_date } = album;
         return (
           <li key={index}>
