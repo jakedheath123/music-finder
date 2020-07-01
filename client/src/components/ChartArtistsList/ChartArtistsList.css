@@ -14,3 +14,7 @@
   height: 80%;
   border-radius: 50%;
 }
+
+.chart-list img:hover {
+  opacity: 0.5;
+}

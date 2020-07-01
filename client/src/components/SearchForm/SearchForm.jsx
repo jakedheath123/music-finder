@@ -16,25 +16,23 @@ const SearchForm = ({ searchByArtist }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div style={{ border: "1px solid black" }}>
-          <input
-            type="text"
-            name="userInput"
-            value={userInput}
-            onChange={handleChange}
-            style={{ border: "none", textAlign: "center" }}
-            placeholder="Search"
-            required
-          />
+    <form onSubmit={handleSubmit}>
+      <div style={{ border: "1px solid black" }}>
+        <input
+          type="text"
+          name="userInput"
+          value={userInput}
+          onChange={handleChange}
+          style={{ border: "none", textAlign: "center" }}
+          placeholder="Search"
+          required
+        />
 
-          <button style={{ padding: "0", border: "0" }}>
-            <i className="fas fa-search"></i>
-          </button>
-        </div>
-      </form>
-    </div>
+        <button style={{ padding: "0", border: "0" }}>
+          <i className="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
   );
 };
 

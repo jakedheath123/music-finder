@@ -8,9 +8,9 @@ import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks";
 
 const ArtistPage = ({ artist_id }) => {
   const ARTIST_QUERY = gql`
-    query {
+    query artistQuery {
       artist(name: "${artist_id}") {
-      name,
+       name
        picture_big
    }
  }
@@ -29,7 +29,6 @@ const ArtistPage = ({ artist_id }) => {
         <img src={picture_big} alt="Artist cover" />
       </section>
       <aside className="single-artist-tracks">
-        <h2>Top Tracks</h2>
         <ArtistTopTracks artist_id={artist_id} />
       </aside>
       <section className="single-artist-albums">

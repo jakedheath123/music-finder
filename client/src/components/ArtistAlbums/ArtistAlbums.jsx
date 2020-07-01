@@ -6,11 +6,11 @@ import "./ArtistAlbums.css";
 
 const ArtistAlbums = ({ artist_id }) => {
   const ALBUMS_QUERY = gql`
-  query {
+  query albumsQuery {
     artistAlbums(id: "${artist_id}") {
-      title,
-      cover_medium,
-      fans,
+      title
+      cover_medium
+      fans
       release_date
     }
   }

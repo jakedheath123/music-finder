@@ -6,10 +6,10 @@ import "./ArtistTopTracks.css";
 
 const ArtistTopTracks = ({ artist_id }) => {
   const ARTIST_TOP_TRACKS_QUERY = gql`
-  query {
+  query artistTopTracksQuery {
     topArtistTracks(id: "${artist_id}") {
-      title_short,
-      preview,
+      title_short
+      preview
       contributors {
         name
       }
@@ -24,23 +24,26 @@ const ArtistTopTracks = ({ artist_id }) => {
   const { topArtistTracks } = data;
 
   return (
-    <ul className="tracks-list">
-      {topArtistTracks.map(track => {
-        const { title_short, preview, contributors } = track;
-        return (
-          <li key={title_short}>
-            <h3>{title_short}</h3>
-            <audio controls>
-              <source src={preview} type="audio/ogg" />
-            </audio>
-            {contributors.map((contributor, index) => {
-              const { name } = contributor;
-              return <p key={index}>{name}</p>;
-            })}
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <h2>Top Tracks</h2>
+      <ul className="tracks-list">
+        {topArtistTracks.map(track => {
+          const { title_short, preview, contributors } = track;
+          return (
+            <li key={title_short}>
+              <h3>{title_short}</h3>
+              <audio controls>
+                <source src={preview} type="audio/ogg" />
+              </audio>
+              {contributors.map((contributor, index) => {
+                const { name } = contributor;
+                return <p key={index}>{name}</p>;
+              })}
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };
 

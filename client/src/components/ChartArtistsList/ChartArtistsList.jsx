@@ -7,7 +7,7 @@ import "./ChartArtistsList.css";
 
 const ChartArtistsList = () => {
   const CHART_ARTISTS_QUERY = gql`
-    query {
+    query chartArtistsQuery {
       chartArtists {
         id
         name
@@ -24,22 +24,20 @@ const ChartArtistsList = () => {
   const { chartArtists } = data;
 
   return (
-    <section>
-      <ul className="chart-list">
-        {chartArtists.map(artist => {
-          const { id, name, picture_big, position } = artist;
-          return (
-            <li key={id}>
-              <h2>{position}</h2>
-              <Link to={`/artist/${id}`}>
-                <img src={picture_big} alt="Artist cover" />
-              </Link>
-              <h1>{name}</h1>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    <ul className="chart-list">
+      {chartArtists.map(artist => {
+        const { id, name, picture_big, position } = artist;
+        return (
+          <li key={id}>
+            <h2>{position}</h2>
+            <Link to={`/artist/${id}`}>
+              <img src={picture_big} alt="Artist cover" />
+            </Link>
+            <h1>{name}</h1>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

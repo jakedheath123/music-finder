@@ -11,10 +11,10 @@ const HomePage = () => {
   const [artistSearch, setArtistSearch] = useState(null);
 
   const ARTIST_QUERY = gql`
-    query {
+    query artistQuery {
       artist(name: "${artistSearch}") {
-        name,
-        id,
+        name
+        id
         picture_big
       }
     }
@@ -33,11 +33,13 @@ const HomePage = () => {
 
   return (
     <main className="home-container">
-      <ChartArtistsList className="home-chart-artists" />
-      <div className="home-search">
+      <section className="home-chart-artists">
+        <ChartArtistsList />
+      </section>
+      <section className="home-search">
         <SearchForm searchByArtist={searchByArtist} />
-      </div>
-      <div className="home-content">
+      </section>
+      <section className="home-content">
         {picture_big ? (
           <Link to={`/artist/${id}`}>
             {" "}
@@ -45,7 +47,7 @@ const HomePage = () => {
           </Link>
         ) : null}
         <h1>{name}</h1>
-      </div>
+      </section>
     </main>
   );
 };
