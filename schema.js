@@ -54,7 +54,7 @@ const RootQuery = new GraphQLObjectType({
     albums: {
       type: new GraphQLList(AlbumsType),
       args: {
-        id: { type: GraphQLInt }
+        id: { type: GraphQLString }
       },
       resolve(parent, args) {
         return axios
