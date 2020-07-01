@@ -3,13 +3,14 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
 import Albums from "../Albums/Albums";
+import TopTracks from "../TopTracks/TopTracks";
 
 const ArtistPage = ({ artist_id }) => {
   const ARTIST_QUERY = gql`
- query {
-   artist(name: "${artist_id}") {
-     name,
-     picture_big
+    query {
+      artist(name: "${artist_id}") {
+      name,
+       picture_big
    }
  }
  `;
@@ -26,6 +27,9 @@ const ArtistPage = ({ artist_id }) => {
         <h1>{name}</h1>
         <img src={picture_big} alt="Artist cover" />
       </section>
+      <aside>
+        <TopTracks />
+      </aside>
       <section>
         <Albums artist_id={artist_id} />
       </section>
