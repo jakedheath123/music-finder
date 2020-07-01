@@ -2,7 +2,7 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
-import "./SingleArtist.css";
+import "./SingleArtistPage.css";
 import ArtistAlbums from "../ArtistAlbums/ArtistAlbums";
 import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks";
 

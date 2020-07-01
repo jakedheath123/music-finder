@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { Link } from "@reach/router";
 
-import "./Home.css";
+import "./HomePage.css";
 import SearchForm from "../SearchForm/SearchForm";
 import ChartArtistsList from "../ChartArtistsList/ChartArtistsList";
 
