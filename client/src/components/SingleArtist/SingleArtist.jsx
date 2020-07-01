@@ -2,6 +2,8 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
+import Albums from "../Albums/Albums";
+
 const ArtistPage = ({ artist_id }) => {
   const ARTIST_QUERY = gql`
  query {
@@ -25,9 +27,7 @@ const ArtistPage = ({ artist_id }) => {
         <img src={picture_big} alt="Artist cover" />
       </section>
       <section>
-        <ul>
-          <li></li>
-        </ul>
+        <Albums />
       </section>
     </main>
   );
