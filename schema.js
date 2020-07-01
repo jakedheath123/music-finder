@@ -32,7 +32,8 @@ const ChartArtistsType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLInt },
     name: { type: GraphQLString },
-    picture_big: { type: GraphQLString }
+    picture_big: { type: GraphQLString },
+    position: { type: GraphQLInt }
   })
 });
 
