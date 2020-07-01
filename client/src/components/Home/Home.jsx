@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { Link } from "@reach/router";
 
-import "./HomePage.css";
+import "./Home.css";
 import SearchForm from "../SearchForm/SearchForm";
 
 const HomePage = () => {
