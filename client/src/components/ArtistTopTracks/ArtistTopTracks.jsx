@@ -24,7 +24,7 @@ const ArtistTopTracks = ({ artist_id }) => {
   const { topArtistTracks } = data;
 
   return (
-    <aside>
+    <>
       <h2>Top Tracks</h2>
       <ul className="tracks-list">
         {topArtistTracks.map(track => {
@@ -43,7 +43,7 @@ const ArtistTopTracks = ({ artist_id }) => {
           );
         })}
       </ul>
-    </aside>
+    </>
   );
 };
 

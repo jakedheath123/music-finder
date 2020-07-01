@@ -28,8 +28,12 @@ const ArtistPage = ({ artist_id }) => {
         <h1>{name}</h1>
         <img src={picture_big} alt="Artist cover" />
       </section>
-      <ArtistTopTracks artist_id={artist_id} className="single-artist-tracks" />
-      <ArtistAlbums artist_id={artist_id} className="single-artist-albums" />
+      <aside className="single-artist-tracks">
+        <ArtistTopTracks artist_id={artist_id} />
+      </aside>
+      <section className="single-artist-albums">
+        <ArtistAlbums artist_id={artist_id} />
+      </section>
     </main>
   );
 };
