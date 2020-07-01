@@ -23,13 +23,13 @@ const ArtistAlbums = ({ artist_id }) => {
   const { artistAlbums } = data;
 
   return (
-    <ul>
+    <ul className="albums-list">
       {artistAlbums.map((album, index) => {
         const { title, cover_medium, fans, release_date } = album;
         return (
           <li key={index}>
-            <h2>{title}</h2>
             <img src={cover_medium} alt="Album cover" />
+            <h4>{title}</h4>
             <p>{fans}</p>
             <p>{release_date}</p>
           </li>
