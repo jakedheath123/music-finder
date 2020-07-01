@@ -11,3 +11,7 @@
 .tracks-list p {
   margin: 0.5rem;
 }
+
+.tracks-list h3 {
+  color: grey;
+}
