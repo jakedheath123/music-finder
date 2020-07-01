@@ -13,8 +13,8 @@ const HomePage = () => {
   const ARTIST_QUERY = gql`
     query {
       artist(name: "${artistSearch}") {
-        name
-        id
+        name,
+        id,
         picture_big
       }
     }
