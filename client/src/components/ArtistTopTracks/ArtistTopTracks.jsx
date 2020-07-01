@@ -25,6 +25,7 @@ const ArtistTopTracks = ({ artist_id }) => {
 
   return (
     <aside>
+      <h2>Top Tracks</h2>
       <ul className="tracks-list">
         {topArtistTracks.map(track => {
           const { title_short, preview, contributors } = track;

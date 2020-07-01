@@ -2,3 +2,12 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
+
+.tracks-list li {
+  display: flex;
+  align-items: center;
+}
+
+.tracks-list p {
+  margin: 0.5rem;
+}
