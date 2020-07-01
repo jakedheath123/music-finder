@@ -2,6 +2,8 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
+import "./ArtistTopTracks.css";
+
 const ArtistTopTracks = ({ artist_id }) => {
   const ARTIST_TOP_TRACKS_QUERY = gql`
   query {
@@ -23,7 +25,7 @@ const ArtistTopTracks = ({ artist_id }) => {
 
   return (
     <aside>
-      <ul>
+      <ul className="tracks-list">
         {topArtistTracks.map(track => {
           const { title_short, preview, contributors } = track;
           return (
