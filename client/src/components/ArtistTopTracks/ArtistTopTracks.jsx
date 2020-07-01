@@ -35,10 +35,14 @@ const ArtistTopTracks = ({ artist_id }) => {
               <audio controls>
                 <source src={preview} type="audio/ogg" />
               </audio>
-              {contributors.map((contributor, index) => {
-                const { name } = contributor;
-                return <p key={index}>{name}</p>;
-              })}
+              {contributors.length > 3 ? (
+                <p>{contributors[0].name}</p>
+              ) : (
+                contributors.map((contributor, index) => {
+                  const { name } = contributor;
+                  return <p key={index}>{name}</p>;
+                })
+              )}
             </li>
           );
         })}
