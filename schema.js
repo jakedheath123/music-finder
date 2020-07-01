@@ -27,6 +27,15 @@ const AlbumsType = new GraphQLObjectType({
   })
 });
 
+const ChartArtistsType = new GraphQLObjectType({
+  name: "Chart Artists",
+  fields: () => ({
+    id: { type: GraphQLInt },
+    name: { type: GraphQLString },
+    picture_big: { type: GraphQLString }
+  })
+});
+
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -49,6 +58,14 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/albums`)
+          .then(response => response.data.data);
+      }
+    },
+    chartArtists: {
+      type: new GraphQLList(ChartArtistsType),
+      resolve(parent, args) {
+        return axios
+          .get("https://api.deezer.com/chart/0/artists")
           .then(response => response.data.data);
       }
     }
