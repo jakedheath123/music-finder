@@ -22,6 +22,11 @@
   grid-area: home-content;
 }
 
+.home-content h1 {
+  color: grey;
+  font-size: 1rem;
+}
+
 .home-content img {
   width: 20%;
   height: 20%;

@@ -24,9 +24,11 @@ const HomePage = () => {
     setArtistSearch(userInput);
   };
 
-  const { loading, data } = useQuery(ARTIST_QUERY);
+  const { loading, error, data } = useQuery(ARTIST_QUERY);
+  console.log(loading, "<<<<LOADING");
+  console.log(error, "<<<<<ERROR");
+  console.log(data, "<<<<<DATA");
 
-  if (!data) return null;
   if (loading) return <p>Loading</p>;
 
   const { name, picture_big, id } = data.artist;
