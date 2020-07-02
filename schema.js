@@ -21,6 +21,7 @@ const ArtistType = new GraphQLObjectType({
 const ArtistAlbumsType = new GraphQLObjectType({
   name: "ArtistAlbums",
   fields: () => ({
+    id: { type: GraphQLInt },
     title: { type: GraphQLString },
     cover_medium: { type: GraphQLString },
     fans: { type: GraphQLInt },
