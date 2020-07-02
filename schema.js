@@ -65,7 +65,15 @@ const AlbumTracksType = new GraphQLObjectType({
     title_short: { type: GraphQLString },
     track_position: { type: GraphQLInt },
     explicit_lyrics: { type: GraphQLBoolean },
-    preview: { type: GraphQLString }
+    preview: { type: GraphQLString },
+    artist: { type: AlbumArtistType }
+  })
+});
+
+const AlbumArtistType = new GraphQLObjectType({
+  name: "AlbumArtist",
+  fields: () => ({
+    id: { type: GraphQLString }
   })
 });
 
