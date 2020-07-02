@@ -7,11 +7,14 @@ ul {
 h1,
 h2,
 h3,
-h4,
 h5 {
   font-family: "Abril Fatface", cursive;
 }
 
-p {
+h4 {
   font-family: "Kaushan Script", cursive;
+}
+
+p {
+  font-family: "Cormorant Garamond", serif;
 }
