@@ -36,11 +36,11 @@ const ArtistTopTracks = ({ artist_id }) => {
                 <source src={preview} type="audio/ogg" />
               </audio>
               {contributors.length > 3 ? (
-                <p>{contributors[0].name}</p>
+                <h4>{contributors[0].name}</h4>
               ) : (
                 contributors.map((contributor, index) => {
                   const { name } = contributor;
-                  return <p key={index}>{name}</p>;
+                  return <h4 key={index}>{name}</h4>;
                 })
               )}
             </li>
