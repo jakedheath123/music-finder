@@ -1,6 +1,7 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import { Link } from "@reach/router";
 
 import "./ArtistAlbums.css";
 
@@ -8,6 +9,7 @@ const ArtistAlbums = ({ artist_id }) => {
   const ALBUMS_QUERY = gql`
   query albumsQuery {
     artistAlbums(id: "${artist_id}") {
+      id
       title
       cover_medium
       fans
@@ -24,12 +26,15 @@ const ArtistAlbums = ({ artist_id }) => {
 
   return (
     <ul className="albums-list">
-      {artistAlbums.map((album, index) => {
-        const { title, cover_medium, fans, release_date } = album;
+      {artistAlbums.map(album => {
+        const { id, title, cover_medium, fans, release_date } = album;
         return (
-          <li key={index}>
+          <li key={id}>
             <img src={cover_medium} alt="Album cover" />
-            <h3>{title}</h3>
+            <Link to={`/album/${id}`}>
+              <h3>{title}</h3>
+            </Link>
+
             <h4>{fans}</h4>
             <h4>{release_date}</h4>
           </li>
