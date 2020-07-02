@@ -3,7 +3,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { Link } from "@reach/router";
 
-import "./SingleAlbum.css";
+import "./SingleAlbumPage.css";
 
 const SingleAlbum = ({ album_id }) => {
   const ALBUM_TRACKS_QUERY = gql`
