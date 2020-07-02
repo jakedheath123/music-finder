@@ -24,10 +24,7 @@ const HomePage = () => {
     setArtistSearch(userInput);
   };
 
-  const { loading, error, data } = useQuery(ARTIST_QUERY);
-  console.log(loading, "<<<<LOADING");
-  console.log(error, "<<<<<ERROR");
-  console.log(data, "<<<<<DATA");
+  const { loading, data } = useQuery(ARTIST_QUERY);
 
   if (loading) return <p>Loading</p>;
 
