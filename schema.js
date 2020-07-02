@@ -61,6 +61,7 @@ const ArtistCommentsType = new GraphQLObjectType({
 const AlbumTracksType = new GraphQLObjectType({
   name: "AlbumTracks",
   fields: () => ({
+    id: { type: GraphQLString },
     title_short: { type: GraphQLString },
     track_position: { type: GraphQLInt },
     explicit_lyrics: { type: GraphQLBoolean },
