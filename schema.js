@@ -46,6 +46,15 @@ const TopArtistTracksType = new GraphQLObjectType({
   })
 });
 
+const ArtistCommentsType = new GraphQLObjectType({
+  name: "ArtistComments",
+  fields: () => ({
+    id: { type: GraphQLInt },
+    text: { type: GraphQLString },
+    date: { type: GraphQLInt }
+  })
+});
+
 const TrackContributorsType = new GraphQLObjectType({
   name: "TrackContributors",
   fields: () => ({
@@ -98,9 +107,27 @@ const RootQuery = new GraphQLObjectType({
           .get(`https://api.deezer.com/artist/${args.id}/top`)
           .then(response => response.data.data);
       }
+    },
+    artistComments: {
+      type: new GraphQLList(ArtistCommentsType),
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve(parent, args) {
+        return axios
+          .get(`https://api.deezer.com/artist/${args.id}/comments`)
+          .then(response => response.data.data);
+      }
     }
   }
 });
+
+// const mutation = new GraphQLObjectType({
+//   name: "Mutation",
+//   fields: {
+//     addArtistComment
+//   }
+// })
 
 module.exports = new GraphQLSchema({
   query: RootQuery
