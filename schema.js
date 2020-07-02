@@ -137,7 +137,7 @@ const RootQuery = new GraphQLObjectType({
       },
       resolve(parent, args) {
         return axios
-          .get(`https://api.deezer.com/artist/${args.id}/comments?limit=5`)
+          .get(`https://api.deezer.com/artist/${args.id}/comments?limit=4`)
           .then(response => response.data.data);
       }
     },
