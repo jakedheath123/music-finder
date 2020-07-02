@@ -21,7 +21,7 @@ const SingleAlbum = ({ album_id }) => {
   `;
 
   const { loading, data } = useQuery(ALBUM_TRACKS_QUERY);
-  console.log(data);
+
   if (loading) return <p>Loading</p>;
 
   const { albumTracks } = data;
