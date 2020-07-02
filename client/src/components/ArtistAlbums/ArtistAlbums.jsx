@@ -29,9 +29,9 @@ const ArtistAlbums = ({ artist_id }) => {
         return (
           <li key={index}>
             <img src={cover_medium} alt="Album cover" />
-            <h4>{title}</h4>
-            <p>{fans}</p>
-            <p>{release_date}</p>
+            <h3>{title}</h3>
+            <h4>{fans}</h4>
+            <h4>{release_date}</h4>
           </li>
         );
       })}
