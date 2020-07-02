@@ -1,19 +1,18 @@
 .albums-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  align-items: center;
 }
 
 .albums-list li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .albums-list img {
-  width: 80%;
-  height: 80%;
+  width: 200px;
+  height: 200px;
 }
 
 .albums-list h4 {

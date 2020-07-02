@@ -34,7 +34,6 @@ const ArtistAlbums = ({ artist_id }) => {
             <Link to={`/album/${id}`}>
               <h3>{title}</h3>
             </Link>
-
             <h4>{fans}</h4>
             <h4>{release_date}</h4>
           </li>
