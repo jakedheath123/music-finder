@@ -6,7 +6,8 @@ const {
   GraphQLList,
   GraphQLNonNull,
   GraphQLInt,
-  GraphQLString
+  GraphQLString,
+  GraphQLBoolean
 } = require("graphql");
 
 const ArtistType = new GraphQLObjectType({
@@ -54,6 +55,16 @@ const ArtistCommentsType = new GraphQLObjectType({
     id: { type: GraphQLInt },
     text: { type: GraphQLString },
     date: { type: GraphQLInt }
+  })
+});
+
+const AlbumTracksType = new GraphQLObjectType({
+  name: "AlbumTracks",
+  fields: () => ({
+    title_short: { type: GraphQLString },
+    track_position: { type: GraphQLInt },
+    explicit_lyrics: { type: GraphQLBoolean },
+    preview: { type: GraphQLString }
   })
 });
 
@@ -118,6 +129,17 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/comments?limit=5`)
+          .then(response => response.data.data);
+      }
+    },
+    albumTracks: {
+      type: new GraphQLList(AlbumTracksType),
+      args: {
+        id: { type: GraphQLInt }
+      },
+      resolve(parent, args) {
+        return axios
+          .get(`https://api.deezer.com/album/${args.id}/tracks`)
           .then(response => response.data.data);
       }
     }
