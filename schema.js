@@ -4,6 +4,7 @@ const {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLList,
+  GraphQLNonNull,
   GraphQLInt,
   GraphQLString
 } = require("graphql");
@@ -122,13 +123,27 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
-// const mutation = new GraphQLObjectType({
-//   name: "Mutation",
-//   fields: {
-//     addArtistComment
-//   }
-// })
+const mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    addArtistComment: {
+      type: ArtistCommentsType,
+      args: {
+        text: { type: new GraphQLNonNull(GraphQLString) },
+        id: { type: GraphQLString }
+      },
+      resolve(parent, args) {
+        return axios
+          .post(`https://api.deezer.com/artist/${args.id}/comments`, {
+            text: args.text
+          })
+          .then(response => response.data);
+      }
+    }
+  }
+});
 
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation
 });
