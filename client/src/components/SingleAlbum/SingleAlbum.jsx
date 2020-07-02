@@ -2,6 +2,8 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
+import "./SingleAlbum.css";
+
 const SingleAlbum = ({ album_id }) => {
   const ALBUM_TRACKS_QUERY = gql`
   query albumTracksQuery {
@@ -21,8 +23,8 @@ const SingleAlbum = ({ album_id }) => {
   const { albumTracks } = data;
 
   return (
-    <main>
-      <ul>
+    <main className="single-album-container">
+      <ul className="single-album-list">
         {albumTracks.map(track => {
           const { id, title_short, track_position, preview } = track;
           return (

@@ -1,0 +1,11 @@
+.single-album-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "single-album-list single-album-list single-album-list";
+  justify-content: center;
+  text-align: center;
+}
+
+.single-album-list {
+  grid-area: single-album-list;
+}
