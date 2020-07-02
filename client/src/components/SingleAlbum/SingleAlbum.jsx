@@ -1,6 +1,7 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import { Link } from "@reach/router";
 
 import "./SingleAlbum.css";
 
@@ -12,12 +13,15 @@ const SingleAlbum = ({ album_id }) => {
       title_short
       track_position
       preview
+      artist {
+        id
+      }
     }
   }
   `;
 
   const { loading, data } = useQuery(ALBUM_TRACKS_QUERY);
-
+  console.log(data);
   if (loading) return <p>Loading</p>;
 
   const { albumTracks } = data;
@@ -25,6 +29,9 @@ const SingleAlbum = ({ album_id }) => {
   return (
     <main className="single-album-container">
       <ul className="single-album-list">
+        <Link to={`/artist/${albumTracks[0].artist.id}`}>
+          <button>Back</button>
+        </Link>
         {albumTracks.map(track => {
           const { id, title_short, track_position, preview } = track;
           return (
