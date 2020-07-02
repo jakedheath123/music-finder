@@ -2,8 +2,8 @@
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:
-    "single-artist-head single-artist-tracks"
-    "single-artist-albums single-artist-albums";
+    "single-artist-comments single-artist-head single-artist-tracks"
+    "single-artist-albums single-artist-albums single-artist-albums";
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -13,6 +13,10 @@
 .single-artist-head {
   grid-area: single-artist-head;
   margin-left: auto;
+}
+
+.single-artist-comments {
+  grid-area: single-artist-comments;
 }
 
 .single-artist-head img {

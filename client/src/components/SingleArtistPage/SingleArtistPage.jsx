@@ -6,6 +6,7 @@ import { Link } from "@reach/router";
 import "./SingleArtistPage.css";
 import ArtistAlbums from "../ArtistAlbums/ArtistAlbums";
 import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks";
+import ArtistComments from "../ArtistComments/ArtistComments";
 
 const ArtistPage = ({ artist_id }) => {
   const ARTIST_QUERY = gql`
@@ -38,6 +39,9 @@ const ArtistPage = ({ artist_id }) => {
       <section className="single-artist-albums">
         <ArtistAlbums artist_id={artist_id} />
       </section>
+      <aside className="single-artist-comments">
+        <ArtistComments />
+      </aside>
     </main>
   );
 };
