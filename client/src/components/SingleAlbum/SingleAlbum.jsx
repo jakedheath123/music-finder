@@ -6,6 +6,7 @@ const SingleAlbum = ({ album_id }) => {
   const ALBUM_TRACKS_QUERY = gql`
   query albumTracksQuery {
     albumTracks(id: ${album_id}) {
+      id
       title_short
       track_position
       explicit_lyrics
@@ -25,13 +26,14 @@ const SingleAlbum = ({ album_id }) => {
       <ul>
         {albumTracks.map(track => {
           const {
+            id,
             title_short,
             track_position,
             explicit_lyrics,
             preview
           } = track;
           return (
-            <li>
+            <li key={id}>
               <h1>{title_short}</h1>
               <h2>{track_position}</h2>
               <h3>{explicit_lyrics}</h3>
