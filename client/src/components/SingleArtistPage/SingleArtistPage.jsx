@@ -40,7 +40,7 @@ const ArtistPage = ({ artist_id }) => {
         <ArtistAlbums artist_id={artist_id} />
       </section>
       <aside className="single-artist-comments">
-        <ArtistComments />
+        <ArtistComments artist_id={artist_id} />
       </aside>
     </main>
   );
