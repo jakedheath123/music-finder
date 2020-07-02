@@ -6,6 +6,7 @@
 .tracks-list li {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .tracks-list h4 {
