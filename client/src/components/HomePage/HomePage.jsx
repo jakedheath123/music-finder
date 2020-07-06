@@ -8,21 +8,17 @@ import SearchForm from "../SearchForm/SearchForm";
 import ChartArtistsList from "../ChartArtistsList/ChartArtistsList";
 
 const HomePage = () => {
-  const [artistSearch, setArtistSearch] = useState(null);
+  const [artist, setArtist] = useState("");
 
   const ARTIST_QUERY = gql`
     query artistQuery {
-      artist(name: "${artistSearch}") {
+      artist(name: "${artist}") {
         name
         id
         picture_big
       }
     }
   `;
-
-  const searchByArtist = userInput => {
-    setArtistSearch(userInput);
-  };
 
   const { loading, data } = useQuery(ARTIST_QUERY);
 
@@ -35,9 +31,10 @@ const HomePage = () => {
       <section className="home-chart-artists">
         <ChartArtistsList />
       </section>
-      <section className="home-search">
-        <SearchForm searchByArtist={searchByArtist} />
-      </section>
+      <SearchForm
+        searchByArtist={query => setArtist(query)}
+        className="home-search"
+      />
       <section className="home-content">
         {picture_big ? (
           <Link to={`/artist/${id}`}>
