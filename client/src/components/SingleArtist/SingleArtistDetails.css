@@ -5,6 +5,7 @@
     "single-artist-bio single-artist-tracks"
     "single-artist-comments single-artist-comments"
     "single-artist-albums single-artist-albums";
+  margin: 5% 10% 0 10%;
 }
 
 .single-artist-bio {
@@ -24,6 +25,7 @@
 .single-artist-tracks {
   grid-area: single-artist-tracks;
   margin-right: auto;
+  margin-top: 8%;
 }
 
 .single-artist-albums {
