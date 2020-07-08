@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 
 import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
-import SingleArtistPage from "./components/SingleArtistPage/SingleArtistPage";
+import SingleArtist from "./components/SingleArtist/SingleArtist";
 import SingleAlbumPage from "./components/SingleAlbumPage/SingleAlbumPage";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <>
       <Router primary={false}>
         <HomePage path="/" />
-        <SingleArtistPage path="/artist/:artist_id" />
+        <SingleArtist path="/artist/:artist_id" />
         <SingleAlbumPage path="/album/:album_id" />
       </Router>
     </>
