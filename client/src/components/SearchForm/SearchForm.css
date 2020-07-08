@@ -1,0 +1,23 @@
+.search-form-container {
+  display: grid;
+  margin: 0 10% 0 10%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-form div {
+  border: 1px solid black;
+}
+
+.search-form input {
+  border: none;
+  text-align: center;
+}
+
+.search-form button {
+  padding: 0;
+  border: 0;
+}
