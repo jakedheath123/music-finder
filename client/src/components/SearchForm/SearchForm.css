@@ -1,11 +1,7 @@
-.search-form-container {
-  display: grid;
-  margin: 0 10% 0 10%;
-}
-
 .search-form {
   display: flex;
   justify-content: center;
+  margin: 0 10% 0 10%;
 }
 
 .search-form div {

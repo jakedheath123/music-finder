@@ -13,8 +13,8 @@ const SearchForm = ({ searchByArtist }) => {
   };
 
   return (
-    <section className="search-form-container">
-      <form onSubmit={onSubmit} className="search-form">
+    <section className="search-form">
+      <form onSubmit={onSubmit}>
         <div>
           <input
             type="text"
