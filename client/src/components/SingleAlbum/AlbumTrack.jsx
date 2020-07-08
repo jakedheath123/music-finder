@@ -4,7 +4,6 @@ import { Link } from "@reach/router";
 import "./AlbumTrack.css";
 
 const AlbumTrack = ({ data: { albumTracks } }) => {
-  console.log(albumTracks);
   return (
     <main>
       <ul className="single-album-list">
