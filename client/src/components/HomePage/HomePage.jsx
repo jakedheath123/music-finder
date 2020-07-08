@@ -6,6 +6,7 @@ import { Link } from "@reach/router";
 import "./HomePage.css";
 import SearchForm from "../SearchForm/SearchForm";
 import ChartArtistsList from "../ChartArtistsList/ChartArtistsList";
+import Loader from "../Loader/Loader";
 
 const HomePage = () => {
   const [artist, setArtist] = useState("");
@@ -22,7 +23,7 @@ const HomePage = () => {
 
   const { loading, data } = useQuery(ARTIST_QUERY);
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <Loader />;
 
   const { name, picture_big, id } = data.artist;
 
