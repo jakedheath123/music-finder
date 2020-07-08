@@ -1,0 +1,18 @@
+.track-item-container li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-item-container h4 {
+  margin: 0.5rem;
+}
+
+.track-item-container h2 {
+  text-align: center;
+}
+
+.track-item-container h3 {
+  color: gray;
+}
