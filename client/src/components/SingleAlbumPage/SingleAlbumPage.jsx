@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Link } from "@reach/router";
 
 import "./SingleAlbumPage.css";
+import Loader from "../Loader/Loader";
 
 const SingleAlbum = ({ album_id }) => {
   const ALBUM_TRACKS_QUERY = gql`
@@ -22,7 +23,7 @@ const SingleAlbum = ({ album_id }) => {
 
   const { loading, data } = useQuery(ALBUM_TRACKS_QUERY);
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <Loader />;
 
   const { albumTracks } = data;
 

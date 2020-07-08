@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Link } from "@reach/router";
 
 import "./ArtistAlbums.css";
+import Loader from "../Loader/Loader";
 
 const ArtistAlbums = ({ artist_id }) => {
   const ALBUMS_QUERY = gql`
@@ -20,7 +21,7 @@ const ArtistAlbums = ({ artist_id }) => {
 
   const { loading, data } = useQuery(ALBUMS_QUERY);
 
-  if (loading) return <p>Loading..</p>;
+  if (loading) return <Loader />;
 
   const { artistAlbums } = data;
 

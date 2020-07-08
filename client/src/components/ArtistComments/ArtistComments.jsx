@@ -2,6 +2,8 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
+import Loader from "../Loader/Loader";
+
 const ArtistComments = ({ artist_id }) => {
   const ARTIST_COMMENTS_QUERY = gql`
   query artistCommentsQuery {
@@ -14,7 +16,7 @@ const ArtistComments = ({ artist_id }) => {
 
   const { loading, data } = useQuery(ARTIST_COMMENTS_QUERY);
 
-  if (loading) return <p>Loading..</p>;
+  if (loading) return <Loader />;
 
   const { artistComments } = data;
   return (

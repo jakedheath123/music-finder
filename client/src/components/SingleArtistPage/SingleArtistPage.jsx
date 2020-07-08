@@ -7,6 +7,7 @@ import "./SingleArtistPage.css";
 import ArtistAlbums from "../ArtistAlbums/ArtistAlbums";
 import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks";
 import ArtistComments from "../ArtistComments/ArtistComments";
+import Loader from "../Loader/Loader";
 
 const ArtistPage = ({ artist_id }) => {
   const ARTIST_QUERY = gql`
@@ -20,7 +21,7 @@ const ArtistPage = ({ artist_id }) => {
 
   const { loading, data } = useQuery(ARTIST_QUERY);
 
-  if (loading) return <p>Loading..</p>;
+  if (loading) return <Loader />;
 
   const { name, picture_big } = data.artist;
 

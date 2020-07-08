@@ -3,6 +3,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
 import "./ArtistTopTracks.css";
+import Loader from "../Loader/Loader";
 
 const ArtistTopTracks = ({ artist_id }) => {
   const ARTIST_TOP_TRACKS_QUERY = gql`
@@ -19,7 +20,7 @@ const ArtistTopTracks = ({ artist_id }) => {
 
   const { loading, data } = useQuery(ARTIST_TOP_TRACKS_QUERY);
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <Loader />;
 
   const { topArtistTracks } = data;
 
