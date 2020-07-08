@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Link } from "@reach/router";
 
 import "./ChartArtistsList.css";
+import Loader from "../Loader/Loader";
 
 const ChartArtistsList = () => {
   const CHART_ARTISTS_QUERY = gql`
@@ -19,7 +20,7 @@ const ChartArtistsList = () => {
 
   const { loading, data } = useQuery(CHART_ARTISTS_QUERY);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
 
   const { chartArtists } = data;
 
