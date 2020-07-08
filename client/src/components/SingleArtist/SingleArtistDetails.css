@@ -2,9 +2,9 @@
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:
-    "single-artist-bio single-artist-bio single-artist-tracks"
-    " single-artist-comments single-artist-comments single-artist-comments"
-    "single-artist-albums single-artist-albums single-artist-albums";
+    "single-artist-bio single-artist-tracks"
+    "single-artist-comments single-artist-comments"
+    "single-artist-albums single-artist-albums";
 }
 
 .single-artist-bio {
@@ -12,10 +12,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: auto;
+}
+
+.single-artist-bio img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 .single-artist-tracks {
   grid-area: single-artist-tracks;
+  margin-right: auto;
 }
 
 .single-artist-albums {
