@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./SearchForm.css";
+
 const SearchForm = ({ searchByArtist }) => {
   const [userQuery, setUserQuery] = useState("");
 
@@ -11,19 +13,18 @@ const SearchForm = ({ searchByArtist }) => {
   };
 
   return (
-    <section>
-      <form onSubmit={onSubmit}>
-        <div style={{ border: "1px solid black" }}>
+    <section className="search-form-container">
+      <form onSubmit={onSubmit} className="search-form">
+        <div>
           <input
             type="text"
             name="userInput"
             value={userQuery}
             onChange={event => setUserQuery(event.target.value)}
-            style={{ border: "none", textAlign: "center" }}
             placeholder="Search"
             required
           />
-          <button style={{ padding: "0", border: "0" }}>
+          <button>
             <i className="fas fa-search"></i>
           </button>
         </div>
