@@ -1,0 +1,27 @@
+.chart-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 10% 0 10%;
+}
+
+.chart-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.chart-list h1 {
+  color: grey;
+  font-size: 1rem;
+}
+
+.chart-list img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.chart-list img:hover {
+  opacity: 0.5;
+}
