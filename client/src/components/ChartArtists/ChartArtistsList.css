@@ -1,7 +1,7 @@
 .chart-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin: 0 10% 0 10%;
+  margin: 0% 10% 0 10%;
 }
 
 .chart-list li {
