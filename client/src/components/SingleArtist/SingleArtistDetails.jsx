@@ -15,11 +15,11 @@ const SingleArtistDetails = ({
   return (
     <main className="single-artist-container">
       <section className="single-artist-bio">
+        <h1>{name}</h1>
+        <img src={picture_big} alt="Artist cover" />
         <Link to="/">
           <button>Back</button>
         </Link>
-        <h1>{name}</h1>
-        <img src={picture_big} alt="Artist cover" />
       </section>
       <section className="single-artist-tracks">
         <ArtistTopTracks artist_id={artist_id} />
