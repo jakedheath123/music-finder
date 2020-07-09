@@ -13,7 +13,7 @@ const TrackItem = ({ data: { topArtistTracks } }) => {
             <li key={title_short}>
               <h3>{title_short}</h3>
               <audio controls>
-                <source src={preview} type="audio/ogg" />
+                <source src={preview} type="audio/mpeg" />
               </audio>
               {contributors.length > 3 ? (
                 <h4>{contributors[0].name}</h4>
