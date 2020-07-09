@@ -1,6 +1,8 @@
 .albums-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  margin: 0 1rem 0 1rem;
+  grid-gap: 1rem;
 }
 
 .albums-list li {
@@ -20,7 +22,7 @@
 
 @media (max-width: 500px) {
   .albums-list {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .albums-list h4,
   h3 {
