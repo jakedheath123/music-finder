@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   margin: 0% 10% 0 10%;
+  grid-gap: 1rem;
 }
 
 .chart-list li {
@@ -9,7 +10,6 @@
   flex-direction: column;
   align-items: center;
   margin: 1rem;
-  text-align: center;
 }
 
 .chart-list h1 {
@@ -25,4 +25,17 @@
 
 .chart-list img:hover {
   opacity: 0.5;
+}
+
+@media (max-width: 500px) {
+  .chart-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chart-list li {
+    margin: 0;
+  }
+  .chart-list h1,
+  h2 {
+    margin: 0;
+  }
 }
