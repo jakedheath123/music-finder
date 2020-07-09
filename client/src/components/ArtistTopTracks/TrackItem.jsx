@@ -12,12 +12,17 @@ const TrackItem = ({ data: { topArtistTracks } }) => {
           return (
             <li key={title_short}>
               <h3>{title_short}</h3>
-              <button style={{ border: "none" }}>
-                <audio controls>
-                  <source src={preview} type="audio/mpeg" />
-                </audio>
-              </button>
+              <iframe
+                title={title_short}
+                frameBorder="0"
+                width="200px"
+                height="100px"
+                src={preview}
+              ></iframe>
 
+              {/* <audio controls>
+                <source src={preview} type="audio/mpeg" />
+              </audio> */}
               {contributors.length > 3 ? (
                 <h4>{contributors[0].name}</h4>
               ) : (
