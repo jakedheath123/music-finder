@@ -1,3 +1,5 @@
-.artist-comments {
-  text-align: center;
+@media (max-width: 500px) {
+  .artist-comments p {
+    font-size: 0.8rem;
+  }
 }
