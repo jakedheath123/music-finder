@@ -1,5 +1,6 @@
 @media (max-width: 500px) {
   .artist-comments p {
     font-size: 0.8rem;
+    margin: 0 10% 5% 10%;
   }
 }
