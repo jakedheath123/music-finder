@@ -17,3 +17,19 @@
 .albums-list h4 {
   padding: 0rem 1rem 0rem 1rem;
 }
+
+@media (max-width: 500px) {
+  .albums-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .albums-list h4,
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .albums-list img {
+    width: 150px;
+    height: 150px;
+  }
+}
