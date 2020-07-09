@@ -17,3 +17,9 @@
   padding: 0;
   border: 0;
 }
+
+@media (max-width: 500px) {
+  .search-form {
+    margin-top: 5%;
+  }
+}
