@@ -5,15 +5,15 @@ import "./AlbumTrack.css";
 
 const AlbumTrack = ({ data: { albumTracks } }) => {
   return (
-    <main>
-      <ul className="single-album-list">
+    <main className="album-track-container">
+      <ul>
         <Link to={`/artist/${albumTracks[0].artist.id}`}>
           <button>Back</button>
         </Link>
         {albumTracks.map(track => {
           const { id, title_short, track_position, preview } = track;
           return (
-            <li key={id}>
+            <li key={id} className="single-album-list">
               <h1>
                 {track_position} : {title_short}
               </h1>
