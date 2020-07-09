@@ -17,9 +17,18 @@ const AlbumTrack = ({ data: { albumTracks } }) => {
               <h1>
                 {track_position} : {title_short}
               </h1>
-              <audio controls>
-                <source src={preview} type="audio/ogg" />
-              </audio>
+              <iframe
+                title={title_short}
+                frameBorder="0"
+                src={preview}
+                style={{
+                  margin: "0",
+                  padding: "0.5rem",
+                  border: "none",
+                  width: "200px",
+                  height: "100px"
+                }}
+              ></iframe>
             </li>
           );
         })}

@@ -15,14 +15,8 @@ const TrackItem = ({ data: { topArtistTracks } }) => {
               <iframe
                 title={title_short}
                 frameBorder="0"
-                width="200px"
-                height="100px"
                 src={preview}
               ></iframe>
-
-              {/* <audio controls>
-                <source src={preview} type="audio/mpeg" />
-              </audio> */}
               {contributors.length > 3 ? (
                 <h4>{contributors[0].name}</h4>
               ) : (

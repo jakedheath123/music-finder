@@ -4,11 +4,25 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 1rem;
+  margin: 0 10% 1% 10%;
+}
+
+iframe {
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
+  margin: 0;
+  padding: 0.5rem;
+  border: none;
+  width: 200px;
+  height: 100px;
 }
 
 .track-item-container h4 {
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 .track-item-container h2 {
@@ -17,6 +31,7 @@
 
 .track-item-container h3 {
   color: gray;
+  margin: 1rem;
 }
 
 @media (max-width: 500px) {
