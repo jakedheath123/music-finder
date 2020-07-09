@@ -14,7 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: auto;
+  justify-content: center;
+}
+
+.single-artist-bio h1 {
+  margin: 0;
 }
 
 .single-artist-bio img {
@@ -22,6 +26,7 @@
   width: 300px;
   height: 300px;
   justify-content: center;
+  margin: 1rem;
 }
 
 .single-artist-tracks {
