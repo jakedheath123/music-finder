@@ -10,9 +10,17 @@
 }
 
 .track-item-container h2 {
-  text-align: center;
+  margin: 0;
 }
 
 .track-item-container h3 {
   color: gray;
+}
+
+@media (max-width: 500px) {
+  .track-item-container h2,
+  h3,
+  h4 {
+    font-size: 1rem;
+  }
 }
