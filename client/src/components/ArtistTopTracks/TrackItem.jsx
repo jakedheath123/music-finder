@@ -5,7 +5,7 @@ import "./TrackItem.css";
 const TrackItem = ({ data: { topArtistTracks } }) => {
   return (
     <div className="track-item-container">
-      <h2>Top Tracks</h2>
+      <h2 style={{ marginBottom: "1rem" }}>Top Tracks</h2>
       <ul>
         {topArtistTracks.map(track => {
           const { title_short, preview, contributors } = track;
