@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 import Loader from "../Loader/Loader";
 import "./ArtistComments.css";
-import { commentCheck } from "../../utils/utils";
+import { commentsCheck } from "../../utils/utils";
 
 const ArtistComments = ({ artist_id }) => {
   const ARTIST_COMMENTS_QUERY = gql`
@@ -22,7 +22,7 @@ const ArtistComments = ({ artist_id }) => {
     <Loader />
   ) : (
     <ul className="artist-comments">
-      {commentCheck(data.artistComments).map(comment => {
+      {commentsCheck(data.artistComments).map(comment => {
         const { text, id } = comment;
         return (
           <li key={id}>
