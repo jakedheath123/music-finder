@@ -6,10 +6,10 @@ import "./AlbumTrack.css";
 const AlbumTrack = ({ data: { albumTracks } }) => {
   return (
     <main className="album-track-container">
+      <Link to={`/artist/${albumTracks[0].artist.id}`}>
+        <button>Back</button>
+      </Link>
       <ul>
-        <Link to={`/artist/${albumTracks[0].artist.id}`}>
-          <button>Back</button>
-        </Link>
         {albumTracks.map(track => {
           const { id, title_short, track_position, preview } = track;
           return (
@@ -21,13 +21,6 @@ const AlbumTrack = ({ data: { albumTracks } }) => {
                 title={title_short}
                 frameBorder="0"
                 src={preview}
-                style={{
-                  margin: "0",
-                  padding: "0.5rem",
-                  border: "none",
-                  width: "200px",
-                  height: "100px"
-                }}
               ></iframe>
             </li>
           );
