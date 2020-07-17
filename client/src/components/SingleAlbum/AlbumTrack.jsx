@@ -6,8 +6,8 @@ import "./AlbumTrack.css";
 const AlbumTrack = ({ data: { albumTracks } }) => {
   return (
     <main className="album-track-container">
-      <Link to={`/artist/${albumTracks[0].artist.id}`}>
-        <button>Back</button>
+      <Link to={`/artist/${albumTracks[0].artist.id}`} className="icon">
+        <i className="far fa-arrow-alt-circle-left fa-2x" />
       </Link>
       <ul>
         {albumTracks.map(track => {

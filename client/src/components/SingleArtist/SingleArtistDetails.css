@@ -42,6 +42,14 @@
   grid-area: single-artist-comments;
 }
 
+i:hover {
+  color: grey;
+}
+
+.icon {
+  color: black;
+}
+
 @media (max-width: 500px) {
   .single-artist-container {
     grid-template-areas:

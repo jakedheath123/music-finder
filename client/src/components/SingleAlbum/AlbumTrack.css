@@ -18,3 +18,11 @@
   color: grey;
   font-size: 1rem;
 }
+
+i:hover {
+  color: grey;
+}
+
+.icon {
+  color: black;
+}
