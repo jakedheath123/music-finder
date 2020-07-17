@@ -39,3 +39,16 @@
     margin: 0;
   }
 }
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .chart-list {
+    margin-top: 10%;
+  }
+  .chart-list li {
+    margin: 0 0 1rem 0;
+  }
+  .chart-list h1,
+  h2 {
+    margin: 0;
+  }
+}

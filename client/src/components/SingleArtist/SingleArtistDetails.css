@@ -65,3 +65,17 @@
     margin-right: 0;
   }
 }
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .single-artist-container {
+    grid-template-areas:
+      "single-artist-bio single-artist-bio"
+      "single-artist-tracks single-artist-tracks"
+      " single-artist-comments single-artist-comments"
+      " single-artist-albums single-artist-albums";
+  }
+  .single-artist-tracks {
+    grid-area: single-artist-tracks;
+    margin: 0;
+  }
+}

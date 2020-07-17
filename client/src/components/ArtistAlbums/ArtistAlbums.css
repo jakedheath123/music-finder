@@ -35,3 +35,9 @@
     height: 150px;
   }
 }
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .albums-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
