@@ -2,7 +2,7 @@
 
 ## Overview
    
-   A React application incorporating Apollo and GraphQL to query data from a third party RESTful API. This project has an express-graphql server with Node, along with a built schema of all GraphQL queries, to allow data requests using the created queries in the React application. 
+   A React application incorporating Apollo and GraphQL to query data from a third party RESTful API. This project has an express-graphql server with Node, along with a built schema of all GraphQL queries to allow data requests using the created queries in the React application. 
    
 ## Demo
 
