@@ -18,6 +18,7 @@ These instructions will provide you with a copy of the project on your local mac
 ### Prerequisites
       
 Node.js version needs to be 12.13.1 or higher. 
+
 React version needs to be 16.13.1 or higher.
       
 Dependencies that need to be installed to run the application:
