@@ -35,17 +35,15 @@ Dependencies that need to be installed to run the application:
 - Client
 ``` 
 @apollo/react-hooks: ^3.1.5
- 
-    @reach/router: ^1.3.4
-    @testing-library/jest-dom: ^4.2.4
-    @testing-library/react: ^9.5.0
-    @testing-library/user-event: ^7.2.1
-    apollo-boost: ^0.4.9
-    graphql: ^15.2.0
-    react: ^16.13.1
-    react-dom: ^16.13.1
-    react-scripts: 3.4.1
-   
+@reach/router: ^1.3.4
+@testing-library/jest-dom: ^4.2.4
+@testing-library/react: ^9.5.0
+@testing-library/user-event: ^7.2.1
+apollo-boost: ^0.4.9
+graphql: ^15.2.0
+react: ^16.13.1
+react-dom: ^16.13.1
+react-scripts: 3.4.1
 ```   
 
 ### Installation
