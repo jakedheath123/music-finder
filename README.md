@@ -25,12 +25,12 @@ Dependencies that need to be installed to run the application:
 
 - Server
 ``` 
- axios: ^0.19.2
- concurrently: ^5.2.0
- cors: ^2.8.5
- express: ^4.17.1
- express-graphql: ^0.9.0
- graphql: ^15.2.0
+axios: ^0.19.2
+concurrently: ^5.2.0
+cors: ^2.8.5
+express: ^4.17.1
+express-graphql: ^0.9.0
+graphql: ^15.2.0
 ```   
 - Client
 ``` 
