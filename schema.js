@@ -97,7 +97,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.name}`)
-          .then(response => response.data);
+          .then(({ data }) => data);
       }
     },
     artistAlbums: {
@@ -108,7 +108,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/albums`)
-          .then(response => response.data.data);
+          .then(({ data }) => data.data);
       }
     },
     chartArtists: {
@@ -116,7 +116,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get("https://api.deezer.com/chart/0/artists")
-          .then(response => response.data.data);
+          .then(({ data }) => data.data);
       }
     },
     topArtistTracks: {
@@ -127,7 +127,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/top`)
-          .then(response => response.data.data);
+          .then(({ data }) => data.data);
       }
     },
     artistComments: {
@@ -138,7 +138,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/comments?limit=4`)
-          .then(response => response.data.data);
+          .then(({ data }) => data.data);
       }
     },
     albumTracks: {
@@ -149,7 +149,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/album/${args.id}/tracks`)
-          .then(response => response.data.data);
+          .then(({ data }) => data.data);
       }
     }
   }
@@ -169,7 +169,7 @@ const mutation = new GraphQLObjectType({
           .post(`https://api.deezer.com/artist/${args.id}/comments`, {
             text: args.text
           })
-          .then(response => response.data);
+          .then(({ data }) => data);
       }
     }
   }
