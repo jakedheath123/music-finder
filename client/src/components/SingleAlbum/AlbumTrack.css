@@ -1,6 +1,7 @@
 .album-track-container ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin: 0% 10% 0 10%;
 }
 
 .single-album-list {
@@ -24,10 +25,20 @@ i:hover {
   color: black;
 }
 
+i {
+  margin-top: 1rem;
+}
+
 @media (max-width: 500px) {
   .album-track-container ul {
     grid-template-columns: repeat(1, 1fr);
   }
+  .single-album-list {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
   .single-album-list {
     margin: 1rem;
   }
