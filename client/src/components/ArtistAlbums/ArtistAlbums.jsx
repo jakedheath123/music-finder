@@ -30,10 +30,7 @@ const ArtistAlbums = ({ artist_id }) => {
         return (
           <li key={id}>
             <img src={cover_medium} alt="Album cover" />
-            <Link
-              to={`/album/${id}`}
-              style={{ textDecoration: "none", color: "grey" }}
-            >
+            <Link to={`/album/${id}`} className="album-link">
               <h3>{title}</h3>
             </Link>
           </li>

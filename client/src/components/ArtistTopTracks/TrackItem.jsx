@@ -4,19 +4,15 @@ import "./TrackItem.css";
 
 const TrackItem = ({ data: { topArtistTracks } }) => {
   return (
-    <div className="track-item-container">
+    <>
       <h2 style={{ marginBottom: "1rem" }}>Top Tracks</h2>
-      <ul>
+      <ul className="track-item-container">
         {topArtistTracks.map(track => {
           const { title_short, preview, contributors } = track;
           return (
             <li key={title_short}>
-              <h3>{title_short}</h3>
-              <iframe
-                title={title_short}
-                frameBorder="0"
-                src={preview}
-              ></iframe>
+              <p>{title_short}</p>
+              <iframe title={title_short} frameBorder="0" src={preview} />
               {contributors.length > 3 ? (
                 <h4>{contributors[0].name}</h4>
               ) : (
@@ -29,7 +25,7 @@ const TrackItem = ({ data: { topArtistTracks } }) => {
           );
         })}
       </ul>
-    </div>
+    </>
   );
 };
 

@@ -17,11 +17,7 @@ const AlbumTrack = ({ data: { albumTracks } }) => {
               <h1>
                 {track_position} : {title_short}
               </h1>
-              <iframe
-                title={title_short}
-                frameBorder="0"
-                src={preview}
-              ></iframe>
+              <iframe title={title_short} frameBorder="0" src={preview} />
             </li>
           );
         })}
