@@ -3,9 +3,10 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
 import Loader from "../Loader/Loader";
-import ChartArtistsList from "./ChartArtistsList";
+import ChartArtistsList from "../ChartArtists/ChartArtistsList";
+import ArtistSearch from "../ArtistSearch/ArtistSearch";
 
-const ChartArtists = () => {
+const MainPage = () => {
   const CHART_ARTISTS_QUERY = gql`
     query chartArtistsQuery {
       chartArtists {
@@ -19,7 +20,14 @@ const ChartArtists = () => {
 
   const { loading, data } = useQuery(CHART_ARTISTS_QUERY);
 
-  return loading ? <Loader /> : <ChartArtistsList data={data} />;
+  return loading ? (
+    <Loader />
+  ) : (
+    <>
+      <ChartArtistsList data={data} />
+      <ArtistSearch />
+    </>
+  );
 };
 
-export default ChartArtists;
+export default MainPage;

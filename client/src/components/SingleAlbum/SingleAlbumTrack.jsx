@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-import "./AlbumTrack.css";
+import "./SingleAlbumTrack.css";
 
-const AlbumTrack = ({ data: { albumTracks } }) => {
+const SingleAlbumTrack = ({ data: { albumTracks } }) => {
   return (
     <main className="album-track-container">
       <Link to={`/artist/${albumTracks[0].artist.id}`} className="icon">
@@ -26,4 +26,4 @@ const AlbumTrack = ({ data: { albumTracks } }) => {
   );
 };
 
-export default AlbumTrack;
+export default SingleAlbumTrack;

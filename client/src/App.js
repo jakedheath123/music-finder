@@ -2,17 +2,17 @@ import React from "react";
 import { Router } from "@reach/router";
 
 import "./App.css";
-import Home from "./components/Home/Home";
-import SingleArtist from "./components/SingleArtist/SingleArtist";
-import SingleAlbum from "./components/SingleAlbum/SingleAlbum";
+import MainPage from "./components/MainPage/MainPage";
+import SingleArtistPage from "./components/SingleArtist/SingleArtistPage";
+import SingleAlbumPage from "./components/SingleAlbum/SingleAlbumPage";
 
 function App() {
   return (
     <>
       <Router primary={false}>
-        <Home path="/" />
-        <SingleArtist path="/artist/:artist_id" />
-        <SingleAlbum path="/album/:album_id" />
+        <MainPage path="/" />
+        <SingleArtistPage path="/artist/:artist_id" />
+        <SingleAlbumPage path="/album/:album_id" />
       </Router>
     </>
   );

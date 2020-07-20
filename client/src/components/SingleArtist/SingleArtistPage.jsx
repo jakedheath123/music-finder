@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 import Loader from "../Loader/Loader";
 import SingleArtistDetails from "./SingleArtistDetails";
 
-const ArtistPage = ({ artist_id }) => {
+const SingleArtistPage = ({ artist_id }) => {
   const ARTIST_QUERY = gql`
     query artistQuery {
       artist(name: "${artist_id}") {
@@ -24,4 +24,4 @@ const ArtistPage = ({ artist_id }) => {
   );
 };
 
-export default ArtistPage;
+export default SingleArtistPage;

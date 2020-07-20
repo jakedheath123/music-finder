@@ -2,7 +2,7 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
-import AlbumTrack from "./AlbumTrack";
+import SingleAlbumTrack from "./SingleAlbumTrack";
 import Loader from "../Loader/Loader";
 
 const SingleAlbum = ({ album_id }) => {
@@ -22,7 +22,7 @@ const SingleAlbum = ({ album_id }) => {
 
   const { loading, data } = useQuery(ALBUM_TRACKS_QUERY);
 
-  return loading ? <Loader /> : <AlbumTrack data={data} />;
+  return loading ? <Loader /> : <SingleAlbumTrack data={data} />;
 };
 
 export default SingleAlbum;
