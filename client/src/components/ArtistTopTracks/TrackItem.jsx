@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./TrackItem.css";
-
 const TrackItem = ({ data: { topArtistTracks } }) => {
   return (
     <>
