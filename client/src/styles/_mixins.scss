@@ -1,0 +1,12 @@
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gridContainer($margin) {
+  display: grid;
+  grid-gap: 1rem;
+  margin: $margin;
+  justify-content: center;
+}
