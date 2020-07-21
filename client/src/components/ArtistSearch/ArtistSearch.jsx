@@ -5,7 +5,6 @@ import { gql } from "apollo-boost";
 import Loader from "../Loader/Loader";
 import SearchForm from "../SearchForm/SearchForm";
 import ArtistSearchCard from "./ArtistSearchCard";
-import "./ArtistSearch.css";
 
 const ArtistSearch = () => {
   const [artist, setArtist] = useState("");
