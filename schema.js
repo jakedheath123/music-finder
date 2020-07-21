@@ -108,7 +108,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/albums`)
-          .then(({ data }) => data.data);
+          .then(({ data: { data } }) => data);
       }
     },
     chartArtists: {
@@ -116,7 +116,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get("https://api.deezer.com/chart/0/artists")
-          .then(({ data }) => data.data);
+          .then(({ data: { data } }) => data);
       }
     },
     topArtistTracks: {
@@ -127,7 +127,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/top`)
-          .then(({ data }) => data.data);
+          .then(({ data: { data } }) => data);
       }
     },
     artistComments: {
@@ -138,7 +138,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/artist/${args.id}/comments?limit=4`)
-          .then(({ data }) => data.data);
+          .then(({ data: { data } }) => data);
       }
     },
     albumTracks: {
@@ -149,7 +149,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return axios
           .get(`https://api.deezer.com/album/${args.id}/tracks`)
-          .then(({ data }) => data.data);
+          .then(({ data: { data } }) => data);
       }
     }
   }
