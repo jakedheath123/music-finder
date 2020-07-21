@@ -3,7 +3,6 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { Link } from "@reach/router";
 
-import "./ArtistAlbums.css";
 import Loader from "../Loader/Loader";
 
 const ArtistAlbums = ({ artist_id }) => {
