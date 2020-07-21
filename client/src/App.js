@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
 
-import "./App.css";
+import "./styles/style.scss";
 import MainPage from "./components/MainPage/MainPage";
 import SingleArtistPage from "./components/SingleArtist/SingleArtistPage";
 import SingleAlbumPage from "./components/SingleAlbum/SingleAlbumPage";
