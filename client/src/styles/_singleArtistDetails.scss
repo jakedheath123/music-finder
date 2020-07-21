@@ -1,0 +1,82 @@
+.single-artist-container {
+  @include gridContainer(5% 10% 0 10%);
+  grid-template-areas:
+    "single-artist-bio single-artist-bio single-artist-tracks"
+    "single-artist-comments single-artist-comments single-artist-comments"
+    "single-artist-albums single-artist-albums single-artist-albums";
+}
+
+.single-artist-bio {
+  @include flexCenter();
+  justify-content: center;
+  grid-area: single-artist-bio;
+  h1 {
+    margin: 0;
+  }
+  img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    margin: 1rem;
+  }
+}
+
+.icon {
+  color: $primaryColor;
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+
+.single-artist-tracks {
+  grid-area: single-artist-tracks;
+  margin-right: auto;
+}
+
+.single-artist-albums {
+  grid-area: single-artist-albums;
+}
+
+.single-artist-comments {
+  grid-area: single-artist-comments;
+}
+
+@media (max-width: 500px) {
+  .single-artist-container {
+    grid-template-areas:
+      "single-artist-bio"
+      "single-artist-tracks"
+      "single-artist-comments"
+      "single-artist-albums";
+  }
+  .single-artist-bio {
+    margin-left: 0;
+    img {
+      width: 250px;
+      height: 250px;
+    }
+    button,
+    h1 {
+      font-size: 1rem;
+    }
+  }
+
+  .single-artist-tracks {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .single-artist-container {
+    grid-template-areas:
+      "single-artist-bio single-artist-bio"
+      "single-artist-tracks single-artist-tracks"
+      " single-artist-comments single-artist-comments"
+      " single-artist-albums single-artist-albums";
+  }
+  .single-artist-tracks {
+    grid-area: single-artist-tracks;
+    margin: 0;
+  }
+}
