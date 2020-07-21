@@ -1,0 +1,44 @@
+.albums-list {
+  @include gridContainer(0 1rem 0 1rem);
+  grid-template-columns: repeat(5, 1fr);
+  li {
+    @include flexCenter();
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  h4 {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+
+.album-link {
+  text-decoration: none;
+  color: $primaryColor;
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+
+@media (max-width: 500px) {
+  .albums-list {
+    grid-template-columns: repeat(2, 1fr);
+    h4,
+    h3 {
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .albums-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
