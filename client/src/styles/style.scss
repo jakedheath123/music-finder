@@ -1,0 +1,39 @@
+@import "./variables";
+@import "./mixins";
+@import "./singleArtistDetails";
+@import "./singleAlbumTrack";
+@import "./searchForm";
+@import "./loader";
+@import "./chartArtistsList";
+@import "./trackItem";
+@import "./artistSearchCard";
+@import "./artistComments";
+@import "./artistAlbums";
+
+body {
+  text-align: justify;
+  text-align: center;
+  background-color: $primaryBackground;
+  color: $primaryColor;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-family: "Abril Fatface", cursive;
+}
+
+h4 {
+  font-family: "Kaushan Script", cursive;
+}
+
+p {
+  font-family: "Cormorant Garamond", serif;
+}
