@@ -3,7 +3,6 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
 import Loader from "../Loader/Loader";
-import "./ArtistComments.css";
 import { commentsCheck } from "../../utils/utils";
 
 const ArtistComments = ({ artist_id }) => {
