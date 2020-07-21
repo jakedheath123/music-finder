@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./Loader.css";
-
 const Loader = () => {
   return (
     <div className="loadingio-spinner-cube-a1drmf4bq2">
