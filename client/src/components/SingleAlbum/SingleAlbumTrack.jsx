@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-import "./SingleAlbumTrack.css";
-
 const SingleAlbumTrack = ({ data: { albumTracks } }) => {
   return (
     <main className="album-track-container">
