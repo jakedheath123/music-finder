@@ -2,7 +2,7 @@
 
 ## Overview
    
-   A React application incorporating Apollo and GraphQL to query data from a third party RESTful API. This project has an Express-GraphQL server with Node.js and a built schema of all GraphQL queries for data requests. 
+   A React application incorporating Apollo and GraphQL to query data from a third party RESTful API. This project has an Express-GraphQL server with Node.js and a built schema of all GraphQL queries for data requests. Styling designed with Sass.
    
 ## Demo
 
@@ -81,6 +81,7 @@ npm run dev
 - [Express](https://expressjs.com/)
 - [Express-GraphQL](https://github.com/graphql/express-graphql)
 - [Axios](https://www.npmjs.com/package/axios)
+- [Sass](https://sass-lang.com/)
 - [Heroku](https://www.heroku.com/)
 - HTML / HTML5
 - Media Queries
