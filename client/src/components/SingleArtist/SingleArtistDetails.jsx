@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-import "./SingleArtistDetails.css";
 import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks";
 import ArtistAlbums from "../ArtistAlbums/ArtistAlbums";
 import ArtistComments from "../ArtistComments/ArtistComments";
