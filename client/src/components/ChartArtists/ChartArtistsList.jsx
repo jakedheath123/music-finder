@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./ChartArtistsList.css";
 import ChartArtistsItem from "./ChartArtistsItem";
 
 const ChartArtistList = ({ data: { chartArtists } }) => {
