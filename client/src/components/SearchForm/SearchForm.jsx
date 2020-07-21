@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import "./SearchForm.css";
-
 const SearchForm = ({ searchByArtist }) => {
   const [userQuery, setUserQuery] = useState("");
 
@@ -24,7 +22,7 @@ const SearchForm = ({ searchByArtist }) => {
             placeholder="Search"
             required
           />
-          <button>
+          <button className="icon">
             <i className="fas fa-search"></i>
           </button>
         </div>
