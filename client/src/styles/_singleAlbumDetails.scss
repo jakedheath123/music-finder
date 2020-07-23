@@ -1,0 +1,109 @@
+.album-details-container {
+  @include gridContainer(0% 10% 0% 10%);
+  grid-template-areas:
+    "home-link home-link home-link"
+    "album-image album-details album-details"
+    "album-tracks album-tracks album-tracks";
+  .home-link {
+    grid-area: home-link;
+    margin-right: auto;
+  }
+  .artist-link {
+    text-decoration: none;
+    color: $primaryColor;
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+  .album-image {
+    grid-area: album-image;
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 5%;
+    }
+  }
+  .album-details {
+    @include flexPosition(flex-start, column);
+    margin-right: auto;
+    grid-area: album-details;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    h5 {
+      margin-top: 1rem;
+      background-color: $primaryColor;
+      color: $secondaryColor;
+      padding: 0.2rem;
+    }
+    p {
+      margin: auto 0 1rem 0;
+    }
+    div {
+      display: flex;
+      align-items: center;
+
+      h2 {
+        color: $primaryColor;
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+  .album-tracks {
+    grid-area: album-tracks;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+
+    li {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      h1 {
+        color: $secondaryColor;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .album-details-container {
+    grid-template-areas:
+      "home-link"
+      "album-image"
+      "album-details"
+      "album-tracks";
+    .album-tracks {
+      ul {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    .album-image {
+      grid-area: album-image;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .album-details {
+      margin: 0;
+      align-items: center;
+    }
+    .home-link {
+      grid-area: home-link;
+      margin-right: 0;
+    }
+  }
+}
