@@ -1,5 +1,5 @@
 .artist-comments {
-  @include flexCenter();
+  @include flexPosition(center, column);
 }
 
 @media (max-width: 500px) {
