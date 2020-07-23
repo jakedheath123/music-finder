@@ -1,5 +1,5 @@
 .artist-search-display {
-  @include flexCenter();
+  @include flexPosition(center, column);
   margin: 0 10% 0 10%;
   h1 {
     color: $secondaryColor;
