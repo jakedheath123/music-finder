@@ -59,17 +59,40 @@ const ArtistCommentsType = new GraphQLObjectType({
   })
 });
 
-const AlbumTracksType = new GraphQLObjectType({
-  name: "AlbumTracks",
+const SingleAlbumType = new GraphQLObjectType({
+  name: "SingleAlbum",
+  fields: () => ({
+    id: { type: GraphQLString },
+    title: { type: GraphQLString },
+    cover_medium: { type: GraphQLString },
+    release_date: { type: GraphQLString },
+    explicit_lyrics: { type: GraphQLBoolean },
+    fans: { type: GraphQLInt },
+    duration: { type: GraphQLInt },
+    artist: { type: ArtistType },
+    tracks: { type: DataObjectType }
+  })
+});
+
+const DataObjectType = new GraphQLObjectType({
+  name: "DataObject",
+  fields: () => ({
+    data: { type: SingleAlbumTracksListType }
+  })
+});
+
+const SingleAlbumTracksType = new GraphQLObjectType({
+  name: "SingleAlbumTracks",
   fields: () => ({
     id: { type: GraphQLString },
     title_short: { type: GraphQLString },
-    track_position: { type: GraphQLInt },
     explicit_lyrics: { type: GraphQLBoolean },
     preview: { type: GraphQLString },
     artist: { type: AlbumArtistType }
   })
 });
+
+const SingleAlbumTracksListType = new GraphQLList(SingleAlbumTracksType);
 
 const AlbumArtistType = new GraphQLObjectType({
   name: "AlbumArtist",
@@ -142,15 +165,15 @@ const RootQuery = new GraphQLObjectType({
           .then(({ data: { data } }) => data);
       }
     },
-    albumTracks: {
-      type: new GraphQLList(AlbumTracksType),
+    singleAlbum: {
+      type: SingleAlbumType,
       args: {
         id: { type: GraphQLInt }
       },
       resolve(parent, args) {
         return axios
-          .get(`https://api.deezer.com/album/${args.id}/tracks`)
-          .then(({ data: { data } }) => data);
+          .get(`https://api.deezer.com/album/${args.id}`)
+          .then(({ data }) => data);
       }
     }
   }
