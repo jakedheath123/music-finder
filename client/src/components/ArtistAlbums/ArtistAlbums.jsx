@@ -12,6 +12,8 @@ const ArtistAlbums = ({ artist_id }) => {
       id
       title
       cover_medium
+      release_date
+      explicit_lyrics
     }
   }
   `;
@@ -25,13 +27,21 @@ const ArtistAlbums = ({ artist_id }) => {
   return (
     <ul className="albums-list">
       {artistAlbums.map(album => {
-        const { id, title, cover_medium } = album;
+        const {
+          id,
+          title,
+          cover_medium,
+          release_date,
+          explicit_lyrics
+        } = album;
         return (
           <li key={id}>
-            <img src={cover_medium} alt="Album cover" />
             <Link to={`/album/${id}`} className="album-link">
-              <h3>{title}</h3>
+              <img src={cover_medium} alt="Album cover" />
             </Link>
+            <h3>{title}</h3>
+            <h4>Released on {release_date}</h4>
+            {explicit_lyrics ? <p>Explicit</p> : null}
           </li>
         );
       })}
