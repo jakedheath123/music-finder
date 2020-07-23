@@ -26,7 +26,8 @@ const ArtistAlbumsType = new GraphQLObjectType({
     title: { type: GraphQLString },
     cover_medium: { type: GraphQLString },
     fans: { type: GraphQLInt },
-    release_date: { type: GraphQLString }
+    release_date: { type: GraphQLString },
+    explicit_lyrics: { type: GraphQLBoolean }
   })
 });
 
