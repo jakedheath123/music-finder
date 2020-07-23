@@ -1,9 +1,9 @@
 .chart-list {
   @include gridContainer(0% 10% 0 10%);
-
+  justify-content: center;
   grid-template-columns: repeat(5, 1fr);
   li {
-    @include flexCenter();
+    @include flexPosition(center, column);
     margin: 1rem;
   }
   h1 {
